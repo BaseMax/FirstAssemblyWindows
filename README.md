@@ -20,4 +20,6 @@ HelloAssembly
 ml /coff HelloAssembly.asm
 ```
 
-Thank you from Dave.
+#### Credit
+
+I just exercising to learn more, I did whatever Dave did. Thank you from Dave.
