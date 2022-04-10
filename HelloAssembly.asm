@@ -89,5 +89,46 @@ WinMain proc hInst:HINSTANCE, hPrevInst:HINSTANCE, CmdLine:LPSTR, CmdShow:DWORD
     mov wc.hIcon, eax
     mov wc.hIconSm, eax
 
-    
+    push IDC_ARROW                             ; Get the default "arrow" mouse cursor
+    push NULL
+    call LocaCursor
+    mov wc.hCursor, eax
+
+    lea eax, wc
+    push eax
+    call RegisterClassEx                      ; Register the window class
+
+
+    push NULL                                 ; Bonus data, but we have none, so null
+    push hInstance                            ; Our app instance handle
+    push NULL                                 ; Menu handle
+    push NULL                                 ; Parent window (if)
+    push WindowsHeight                        ; Our requested height
+    push WindowsWidth                         ; Our requested width
+    push CW_USEDEFAULT                        ; Y
+    push CW_USEDEFAULT                        ; X
+    push WS_OVERAPPEDWINDOW + WS_VISIBLE      ; Window style
+    push OFFSET AppName                       ; The window title
+    push OFFSET ClassName                     ; The window class
+    push 0                                    ; Extended style bits, if any
+    call CreateWindowExA
+    cmp eax, NULL
+    je WinMainRet                             ; Fail and bail on NULL handle returned
+    mov hwnd, eax                             ; Window handle is the result, returned in eax
+
+    push eax                                  ; Force a paint of 
+    call UpdateWindow
+
+
+MessageLoop:
+    push 0
+    push 0
+    push NULL
+    lea eax, msg
+    push eax
+    call GetMessage                          ; Get a message frmo 
+
+    cmp eax, 0                               ; When GetMessage return
+    je DoneMessages
+
 
