@@ -23,7 +23,7 @@ WindowHeight    equ 480
  
 .DATA
 ClassName       db "MyWinClass", 0                              ; The name of our Window class
-AppName     db "First Tiny App", 0                             ; The name of our main window
+AppName     db "First Tiny App", 0                              ; The name of our main window
  
 .DATA?                                                          ; Uninitialized data - Basically just reserves address space
 hInstance   HINSTANCE ?                                         ; Instance handle (like the process id) of our application
@@ -139,7 +139,7 @@ MessageLoop:
     jmp MessageLoop
  
 DoneMessages:
-    mov eax, msg.wParam                                        ; Return wParam of last message processed
+    mov eax, msg.wParam                                         ; Return wParam of last message processed
  
 WinMainRet:
     ret
