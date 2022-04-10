@@ -20,6 +20,4 @@ HelloAssembly
 ml /coff HelloAssembly.asm
 ```
 
-## Setup
-
 Thank you from Dave.
