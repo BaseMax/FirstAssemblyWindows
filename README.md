@@ -20,6 +20,13 @@ HelloAssembly
 ml /coff HelloAssembly.asm
 ```
 
+## Next
+
+I just noticed an update on this topic from "Artemis Meursault Gerrard" in which he succeed in breaching the limitation and did it in such a way that still works. His version is smaller than what we see here and Dave's version.
+
+Link for ASM lovers:
+https://github.com/OMGtechy/tinydoze
+
 #### Credit
 
 I just exercising to learn more, I did whatever Dave did. Thank you from Dave.
