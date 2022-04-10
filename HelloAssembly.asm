@@ -4,15 +4,15 @@ option casemap:none                                             ; Preserve the c
  
  
 ; Include files - headers and libs that we need for calling the system dlls like user32, gdi32, kernel32, etc
-include \masm\include\windows.inc                             ; Main windows header file (akin to Windows.h in C)
-include \masm\include\user32.inc                              ; Windows, controls, etc
-include \masm\include\kernel32.inc                            ; Handles, modules, paths, etc
-include \masm\include\gdi32.inc                               ; Drawing into a device context (ie: painting)
+include \masm32\include\windows.inc                             ; Main windows header file (akin to Windows.h in C)
+include \masm32\include\user32.inc                              ; Windows, controls, etc
+include \masm32\include\kernel32.inc                            ; Handles, modules, paths, etc
+include \masm32\include\gdi32.inc                               ; Drawing into a device context (ie: painting)
  
 ; Libs - information needed to link ou binary to the system DLL callss
-includelib \masm\lib\kernel32.lib                             ; Kernel32.dll
-includelib \masm\lib\user32.lib                               ; User32.dll
-includelib \masm\lib\gdi32.lib                                ; GDI32.dll
+includelib \masm32\lib\kernel32.lib                             ; Kernel32.dll
+includelib \masm32\lib\user32.lib                               ; User32.dll
+includelib \masm32\lib\gdi32.lib                                ; GDI32.dll
  
 ; Forward declarations - Our main entry point will call forward to WinMain, so we need to define it here
 WinMain proto :DWORD, :DWORD, :DWORD, :DWORD                    ; Forward decl for MainEntry 
