@@ -18,12 +18,12 @@ includelib \masm32\lib\gdi32.lib                                ; GDI32.dll
 WinMain proto :DWORD, :DWORD, :DWORD, :DWORD                    ; Forward decl for MainEntry 
  
 ; Constants and Datra
-WindowWidth equ 640                                             ; How big we'd like our main window
+WindowWidth     equ 640                                         ; How big we'd like our main window
 WindowHeight    equ 480
  
 .DATA
 ClassName       db "MyWinClass", 0                              ; The name of our Window class
-AppName     db "First Tiny App", 0                              ; The name of our main window
+AppName         db "First Tiny App", 0                          ; The name of our main window
  
 .DATA?                                                          ; Uninitialized data - Basically just reserves address space
 hInstance   HINSTANCE ?                                         ; Instance handle (like the process id) of our application
@@ -63,9 +63,7 @@ MainEntry proc
  
 MainEntry endp
  
-; 
 ; WinMain - The traditional signature for the main entry point of a Windows programa
-;
 WinMain proc hInst:HINSTANCE, hPrevInst:HINSTANCE, CmdLine:LPSTR, CmdShow:DWORD
     LOCAL   wc:WNDCLASSEX                                       ; Create these vars on the stack, hence LOCAL
     LOCAL   msg:MSG
@@ -206,4 +204,3 @@ NotWMPaint:
 WndProc endp
  
 END MainEntry                                                   ; Specify entry point, else _WinMainCRTStartup is assumed
- 
